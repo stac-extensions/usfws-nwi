@@ -1,14 +1,15 @@
-# Template Extension Specification
+# USFWS NWI Extension Specification
 
-- **Title:** Template
-- **Identifier:** <https://stac-extensions.github.io/template/v1.0.0/schema.json>
-- **Field Name Prefix:** template
+- **Title:** U.S. Fish & Wildlife Service (FWS) National Wetlands Inventory (NWI)
+- **Identifier:** <https://stac-extensions.github.io/usfws-nwi/v1.0.0/schema.json>
+- **Field Name Prefix:** fws_nwi
 - **Scope:** Item, Collection
 - **Extension [Maturity Classification](https://github.com/radiantearth/stac-spec/tree/master/extensions/README.md#extension-maturity):** Proposal
-- **Owner**: @your-gh-handles @person2
+- **Owner**: @m-mohr
 
-This document explains the Template Extension to the [SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
-This is the place to add a short introduction.
+This document explains the U.S. Fish & Wildlife Service (FWS) National Wetlands Inventory (NWI) Extension to the
+[SpatioTemporal Asset Catalog](https://github.com/radiantearth/stac-spec) (STAC) specification.
+See <https://www.fws.gov/program/national-wetlands-inventory> for details.
 
 - Examples:
   - [Item example](examples/item.json): Shows the basic usage of the extension in a STAC Item
@@ -25,36 +26,69 @@ The fields in the table below can be used in these parts of STAC documents:
 - [x] Assets (for both Collections and Items, incl. Item Asset Definitions in Collections)
 - [ ] Links
 
-| Field Name           | Type                      | Description |
-| -------------------- | ------------------------- | ----------- |
-| template:new_field   | string                    | **REQUIRED**. Describe the required field... |
-| template:xyz         | [XYZ Object](#xyz-object) | Describe the field... |
-| template:another_one | \[number]                 | Describe the field... |
+| Field Name         | Type      | Description                                                  |
+| ------------------ | --------- | ------------------------------------------------------------ |
+| fws_nwi:state      | string    | **REQUIRED**. The applicable US state (long name). One of the [allowed values](#allowed-values) below. |
+| fws_nwi:state_code | string    | **REQUIRED**. The applicable US state (short code). One of the [allowed values](#allowed-values) below. |
+| fws_nwi:content    | \[string] | **REQUIRED**. The content published in this Item. A set of the following allowed values: `historic_wetlands`, `riparian`, `wetlands` |
 
-### Additional Field Information
+### Allowed Values
 
-#### template:new_field
-
-This is a much more detailed description of the field `template:new_field`...
-
-### XYZ Object
-
-This is the introduction for the purpose and the content of the XYZ Object...
-
-| Field Name  | Type   | Description |
-| ----------- | ------ | ----------- |
-| x           | number | **REQUIRED**. Describe the required field... |
-| y           | number | **REQUIRED**. Describe the required field... |
-| z           | number | **REQUIRED**. Describe the required field... |
-
-## Relation types
-
-The following types should be used as applicable `rel` types in the
-[Link Object](https://github.com/radiantearth/stac-spec/tree/master/item-spec/item-spec.md#link-object).
-
-| Type                | Description |
-| ------------------- | ----------- |
-| fancy-rel-type      | This link points to a fancy resource. |
+| `fws_nwi:state_code` | `fws_nwi:state`                |
+| -------------------- | ------------------------------ |
+| AL                   | Alabama                        |
+| AK                   | Alaska                         |
+| AZ                   | Arizona                        |
+| AR                   | Arkansas                       |
+| CA                   | California                     |
+| CO                   | Colorado                       |
+| CT                   | Connecticut                    |
+| DE                   | Delaware                       |
+| DC                   | District of Columbia           |
+| FL                   | Florida                        |
+| GA                   | Georgia                        |
+| HI                   | Hawaii                         |
+| ID                   | Idaho                          |
+| IL                   | Illinois                       |
+| IN                   | Indiana                        |
+| IA                   | Iowa                           |
+| KS                   | Kansas                         |
+| KY                   | Kentucky                       |
+| LA                   | Louisiana                      |
+| ME                   | Maine                          |
+| MD                   | Maryland                       |
+| MA                   | Massachusetts                  |
+| MI                   | Michigan                       |
+| MN                   | Minnesota                      |
+| MS                   | Mississippi                    |
+| MO                   | Missouri                       |
+| MT                   | Montana                        |
+| NE                   | Nebraska                       |
+| NV                   | Nevada                         |
+| NH                   | New Hampshire                  |
+| NJ                   | New Jersey                     |
+| NM                   | New Mexico                     |
+| NY                   | New York                       |
+| NC                   | North Carolina                 |
+| ND                   | North Dakota                   |
+| OH                   | Ohio                           |
+| OK                   | Oklahoma                       |
+| OR                   | Oregon                         |
+| PacTrust             | Pacific Trust Islands          |
+| PA                   | Pennsylvania                   |
+| PRVI                 | Puerto Rico and Virgin Islands |
+| RI                   | Rhode Island                   |
+| SC                   | South Carolina                 |
+| SD                   | South Dakota                   |
+| TN                   | Tennessee                      |
+| TX                   | Texas                          |
+| UT                   | Utah                           |
+| VT                   | Vermont                        |
+| VA                   | Virginia                       |
+| WA                   | Washington                     |
+| WV                   | West Virginia                  |
+| WI                   | Wisconsin                      |
+| WY                   | Wyoming                        |
 
 ## Contributing
 
